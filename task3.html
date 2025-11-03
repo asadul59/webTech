@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="task3.css">
+</head>
+<body>
+ <div><span class="estaric">*</span>- Denotes Required Information</div>
+ <div><span id="donation">> 1 Donation</span>> 2 Confirmation > 3 Thank You!</div>   
+ <div id="header">Donar Information</div>
+ <form action="">
+    <div class="container">
+        <label for="Fname">First Name <span class="estaric">*</span></label>
+        <input type="text" name="Fname">
+    </div>
+    <div class="container">
+        <label for="Lname">Last Name <span class="estaric">*</span></label>
+        <input type="text" name="Lname">
+    </div>
+    <div class="container">
+        <label for="company"> Company </label>
+        <input type="text" name="company">
+    </div>
+    <div class="container">
+        <label for="address1">Address 1 <span class="estaric">*</span></label>
+        <input type="text" name ="address1">
+    </div>
+    <div class="container">
+        <label for="address2">Address 2 <span class="estaric">*</span></label>
+        <input type="text" name="address2">
+    </div>
+    <div class="container">
+        <label for="city">City <span class="estaric">*</span></label>
+        <input type="text" name="city">
+    </div>
+    <div class="container">
+        <label for="state">State <span class="estaric">*</span></label>
+        <select name="state" id="">
+            <option value="">Select a State</option>
+            <option value="dhaka">Dhaka</option>
+            <option value="chittagong">Chittaging</option>
+            <option value="rajshahi">Rajshahi</option>
+        </select>
+    </div>
+    <div class="container">
+        <label for="zipCode">Zip Code <span class="estaric">*</span></label>
+        <input type="text" name="zipCode">
+    </div>
+    <div class="container">
+        <label for="country">State <span class="estaric">*</span></label>
+        <select name="country" id="">
+            <option value="">Select a Country</option>
+            <option value="bangladesh">Bangladesh</option>
+            <option value="usa">USA</option>
+            <option value="england">England</option>
+        </select>
+    </div>
+    <div class="container">
+        <label for="phone"> Phone </label>
+        <input type="number" name="phone">
+    </div>
+    <div class="container">
+        <label for="fax"> Fax </label>
+        <input type="text" name="fax">
+    </div>
+    <div class="container">
+        <label for="email">Email <span class="estaric">*</span></label>
+        <input type="text" name="email">
+    </div>
+
+    <div class="container">
+        <label for="donationAmount">Donation Amount</label>
+
+        <input type="radio" id="none" name="donation" value="None">
+        <label for="none">None</label>
+        <input type="radio" id="50" name="donation" value="50">
+        <label for="50">$50</label>
+        <input type="radio" id="75" name="donation" value="75">
+        <label for="75">$75</label>
+        <input type="radio" id="100" name="donation" value="100">
+        <label for="100">$100</label>
+        <input type="radio" id="250" name="donation" value="250">
+        <label for="250">$250</label>
+        <input type="radio" id="other" name="donation" value="other">
+        <label for="other">Other</label>
+        
+
+    </div>
+    <div class="style">
+    
+        <P>(Check a button or type in your amount)</P>
+        <label for="otherAmount">Other Amount<span class="dollalr"> $</span></label>
+        <input type="text" name="otherAmount">
+    
+    </div>
+    <div class="recurring">
+        <label for="recurringDonation">Recurring Donation</label>
+
+        <input type="checkbox" id="check" name="donation" value="check">
+        <label for="check">I am interested in giving on a regular basis.</label>
+    </div>
+    <div class="check">
+    
+        <P>(Check if yes)</P>
+        <div class="container">
+        <label for="monthlyCredit"> Monthly Credit Card $</label>
+        <input type="number" name="monthlyCredit">
+        <label for="for">For</label>
+        <input type="number" name="monthlyCredit">
+        <label for="month">Months</label>
+    </div>
+        <h2>Honorarium and Memorial Donation Information</h2>
+    </div>
+    
+
+
+ </form>
+</body>
+</html>
