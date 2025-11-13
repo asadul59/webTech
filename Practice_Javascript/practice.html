@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="container">
+    <button id="ADD">ADD</button>
+    <button id="REMOVE">REMOVE</button>
+    <div id="result">Empty</div>
+</div>
+<script>
+const result = document.getElementById("result");
+const ADD = document.getElementById("ADD");
+const REMOVE = document.getElementById("REMOVE");
+let numbers = [];
+let currentNumber = 0;
+ 
+function updateResult() {
+    const length = numbers.length;
+    if (length === 0) { result.innerHTML = "Empty"; }
+    else if (length % 2 === 0) { result.innerHTML = "Even"; }
+    else { result.innerHTML = "Odd"; }
+}
+ 
+function handleAdd() {
+    currentNumber++;
+    numbers.push(currentNumber);
+    updateResult();
+}
+ 
+function handleRemove() {
+    if (numbers.length > 0) {
+        numbers.pop();
+    }
+    updateResult();
+}
+ 
+ADD.addEventListener("click", handleAdd);
+REMOVE.addEventListener("click", handleRemove);
+</script>
+</body>
+</html>
