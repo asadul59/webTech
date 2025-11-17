@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>University Admission Form</title>
+    
+</head>
+
+<body>
+    <div class="form-wrapper">
+        <h1>University Admission Form</h1>
+
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Personal Information</legend>
+
+                <label for="student-fullname">Full Name <span class="mandatory-field">*</span></label>
+                <input type="text" id="student-fullname" name="student-fullname" required maxlength="100" />
+
+                <label for="father-name">Father's Name <span class="mandatory-field">*</span></label>
+                <input type="text" id="father-name" name="father-name" required maxlength="100" />
+
+                <label for="mother-name">Mother's Name <span class="mandatory-field">*</span></label>
+                <input type="text" id="mother-name" name="mother-name" required maxlength="100" />
+
+                <label for="date-of-birth">Date of Birth <span class="mandatory-field">*</span></label>
+                <input type="date" id="date-of-birth" name="date-of-birth" required />
+
+                <label>Gender <span class="mandatory-field">*</span></label>
+                <div class="radio-options">
+                    <label>
+                        <input type="radio" name="student-gender" value="male" required /> Male
+                    </label>
+                    <label>
+                        <input type="radio" name="student-gender" value="female" required />
+                        Female
+                    </label>
+                    <label>
+                        <input type="radio" name="student-gender" value="other" required /> Other
+                    </label>
+                </div>
+
+                <label for="student-email">Email Address <span class="mandatory-field">*</span></label>
+                <input type="email" id="student-email" name="student-email" required />
+
+                <label for="contact-phone">Phone Number <span class="mandatory-field">*</span></label>
+                <input type="text" id="contact-phone" name="contact-phone" required maxlength="15" />
+
+                <label for="permanent-address">Permanent Address <span class="mandatory-field">*</span></label>
+                <textarea id="permanent-address" name="permanent-address" rows="3" required maxlength="200"></textarea>
+            </fieldset>
+
+            <fieldset>
+                <legend>Academic Information</legend>
+
+                <label for="ssc-result">SSC/Equivalent Result <span class="mandatory-field">*</span></label>
+                <input type="text" id="ssc-result" name="ssc-result" required maxlength="10" placeholder="e.g., GPA 5.00" />
+
+                <label for="ssc-passing-year">SSC Passing Year <span class="mandatory-field">*</span></label>
+                <input type="text" id="ssc-passing-year" name="ssc-passing-year" required maxlength="4" placeholder="e.g., 2019" />
+
+                <label for="hsc-result">HSC/Equivalent Result <span class="mandatory-field">*</span></label>
+                <input type="text" id="hsc-result" name="hsc-result" required maxlength="10" placeholder="e.g., GPA 5.00" />
+
+                <label for="hsc-passing-year">HSC Passing Year <span class="mandatory-field">*</span></label>
+                <input type="text" id="hsc-passing-year" name="hsc-passing-year" required maxlength="4" placeholder="e.g., 2021" />
+
+                <label for="preferred-department">Preferred Department <span class="mandatory-field">*</span></label>
+                <select id="preferred-department" name="preferred-department" required>
+                    <option value="">-- Select Department --</option>
+                    <option value="cse">Computer Science & Engineering</option>
+                    <option value="eee">Electrical & Electronics Engineering</option>
+                    <option value="civil">Civil Engineering</option>
+                    <option value="mechanical">Mechanical Engineering</option>
+                    <option value="bba">Business Administration</option>
+                    <option value="english">English</option>
+                    <option value="law">Law</option>
+                </select>
+
+                <label>Areas of Interest</label>
+                <div class="checkbox-options">
+                    <label>
+                        <input type="checkbox" name="area-of-interest" value="programming" />
+                        Programming
+                    </label>
+                    <label>
+                        <input type="checkbox" name="area-of-interest" value="research" />
+                        Research
+                    </label>
+                    <label>
+                        <input type="checkbox" name="area-of-interest" value="sports" /> Sports
+                    </label>
+                    <label>
+                        <input type="checkbox" name="area-of-interest" value="arts" /> Arts
+                    </label>
+                    <label>
+                        <input type="checkbox" name="area-of-interest" value="debate" /> Debate
+                    </label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Document Upload</legend>
+
+                <label for="passport-photo">Passport Size Photo <span class="mandatory-field">*</span></label>
+                <input type="file" id="passport-photo" name="passport-photo" accept="image/*" required />
+
+                <label for="academic-transcript">Academic Transcript <span class="mandatory-field">*</span></label>
+                <input type="file" id="academic-transcript" name="academic-transcript" accept=".pdf,.doc,.docx" required />
+
+                <label for="education-certificate">SSC/HSC Certificate</label>
+                <input type="file" id="education-certificate" name="education-certificate" accept=".pdf,.doc,.docx" />
+            </fieldset>
+
+            <div class="form-actions">
+                <button type="submit">Submit Application</button>
+                <button type="reset">Reset Form</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
