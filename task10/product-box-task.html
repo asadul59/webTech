@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Display - Lab Task 04</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 42px;
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .container {
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-box {
+            display: inline-block;
+            width: 300px;
+            background-color: #ffffff;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            vertical-align: top;
+        }
+
+        .product-box:hover {
+            outline: 4px solid #3498db;
+            outline-offset: 5px;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-box img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .product-box h2 {
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .product-box p {
+            color: #7f8c8d;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            min-height: 60px;
+        }
+
+        .product-box .price {
+            color: #e74c3c;
+            font-size: 28px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .product-box a {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .product-box a:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+
+        .stock-status {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .in-stock {
+            background-color: #2ecc71;
+            color: white;
+        }
+
+        .low-stock {
+            background-color: #f39c12;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Our Products</h1>
+    
+    <div class="container">
+        <div class="product-box" data-product="laptop">
+            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&h=400&fit=crop" alt="Laptop">
+            <h2>Professional Laptop</h2>
+            <p>High-performance laptop with Intel i7 processor, 16GB RAM, and 512GB SSD. Perfect for professionals.</p>
+            <div class="price">129900tk</div>
+            <span class="stock-status in-stock">In Stock</span>
+            <br><br>
+            <a href="#" class="buy-btn">Buy Now</a>
+        </div>
+
+        <div class="product-box" data-product="headphones">
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop" alt="Headphones">
+            <h2>Wireless Headphones</h2>
+            <p>Premium noise-cancelling headphones with 30-hour battery life and crystal-clear sound quality.</p>
+            <div class="price">29900tk</div>
+            <span class="stock-status in-stock">In Stock</span>
+            <br><br>
+            <a href="#" class="buy-btn">Buy Now</a>
+        </div>
+
+        <div class="product-box" data-product="smartwatch">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=400&fit=crop" alt="Smartwatch">
+            <h2>Smart Watch Pro</h2>
+            <p>Advanced fitness tracking, heart rate monitor, GPS, and smartphone notifications on your wrist.</p>
+            <div class="price">39900tk</div>
+            <span class="stock-status low-stock">Low Stock</span>
+            <br><br>
+            <a href="#" class="buy-btn">Buy Now</a>
+        </div>
+    </div>
+
+    <script>
+        const buyButtons = document.querySelectorAll('.buy-btn');
+        const productBoxes = document.querySelectorAll('.product-box');
+
+        buyButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const productBox = this.closest('.product-box');
+                const productName = productBox.querySelector('h2').textContent;
+                const productPrice = productBox.querySelector('.price').textContent;
+                
+                alert(`Added to cart!\nProduct: ${productName}\nPrice: ${productPrice}`);
+                
+                console.log(`Product added: ${productName} - ${productPrice}`);
+            });
+        });
+
+        productBoxes.forEach(box => {
+            box.addEventListener('mouseenter', function() {
+                const productName = this.querySelector('h2').textContent;
+                console.log(`Hovering over: ${productName}`);
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Product display page loaded!');
+            console.log(`Total products: ${productBoxes.length}`);
+        });
+    </script>
+</body>
+</html>

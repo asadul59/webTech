@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar - Lab Task 03</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        nav {
+            background-color: #2c3e50;
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            display: inline-block;
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 15px 30px;
+            margin: 0 10px;
+            font-size: 18px;
+            font-weight: 500;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            background-color: #3498db;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(52, 152, 219, 0.4);
+        }
+
+        nav a.active {
+            background-color: #e74c3c;
+        }
+
+        .content {
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+        }
+
+        .content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .content p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <nav id="mainNav">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="content">
+        <h1>Welcome to Our Company</h1>
+        <p>Explore our navigation bar above. Click on any link to see the active state change!</p>
+    </div>
+
+    <script>
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                navLinks.forEach(l => l.classList.remove('active'));
+                
+                this.classList.add('active');
+                
+                const section = this.textContent;
+                console.log(`Navigated to ${section} section`);
+                
+                document.querySelector('.content h1').textContent = 
+                    `Welcome to ${section}`;
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Navigation bar loaded successfully!');
+        });
+    </script>
+</body>
+</html>
